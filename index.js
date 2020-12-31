@@ -12,12 +12,12 @@ mongoose.connect(process.env.CONNECTMONGO, { useNewUrlParser: true , useUnifiedT
 //Middleware
 app.use(express.json());
 
-
-
 //Auth Router
 const authRoute = require('./routes/auth');
+const PostsRoute = require('./routes/posts');
 //Routes Middleware
 app.use('/api/user', authRoute);
+app.use('/api/posts', PostsRoute);
 
 
 
